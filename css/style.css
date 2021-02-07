@@ -49,7 +49,8 @@ header{
 
 /* Search Result and Grid Styling */
 .search-result-area h1{
-    font-size: 24px;;
+    font-size: 24px;
+    margin: 20px 0 10px;
 }
 
 .search-result-area h1 span{
@@ -117,6 +118,13 @@ header{
 }
 .card-body li i{
     color: tomato;
+}
+
+#item-title{
+    padding: 10px 20px 0;
+    font-size: 24px;
+    margin: 0;
+
 }
 
 
