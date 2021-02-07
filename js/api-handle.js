@@ -1,17 +1,18 @@
 //this function and API will call after clicking on search button 
 function showResult(){
     //reset or refresh search-result-area BLANK
-    document.getElementById('search-result').innerHTML = "";;
-    
+    closeDiv();
+    document.getElementById('search-result').innerHTML = "";
     const searchKey=document.getElementById('searchKey').value;
+    
+
     const searchUrl=`https://themealdb.com/api/json/v1/1/search.php?s=${searchKey}`;
     fetch(searchUrl)
     .then(response => response.json())
     .then(data => searchResult(data.meals,searchKey))
     .catch((error) => {
         alert('We are unable to load data!! Please Check your Internet Connection! ');
-      });
-    
+      });    
 }
 
 
