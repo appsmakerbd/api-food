@@ -127,6 +127,10 @@ header{
 
 }
 
+.item-title{
+    padding: 10px 20px 0;
+}
+
 
 /* Close Button */
 .close{
