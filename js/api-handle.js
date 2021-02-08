@@ -1,18 +1,22 @@
 //this function and API will call after clicking on search button 
 function showResult(){
-    //reset or refresh search-result-area BLANK
-    closeDiv();
-    document.getElementById('search-result').innerHTML = "";
     const searchKey=document.getElementById('searchKey').value;
-    
-
-    const searchUrl=`https://themealdb.com/api/json/v1/1/search.php?s=${searchKey}`;
-    fetch(searchUrl)
-    .then(response => response.json())
-    .then(data => searchResult(data.meals,searchKey))
-    .catch((error) => {
-        alert('We are unable to load data!! Please Check your Internet Connection! ');
-      });    
+    //checking for null submit
+    if(searchKey){
+        //reset or refresh search-result-area (closeDiv used for hiding single item detail) 
+        closeDiv();
+        document.getElementById('search-result').innerHTML = "";
+        
+        const searchUrl=`https://themealdb.com/api/json/v1/1/search.php?s=${searchKey}`;
+        fetch(searchUrl)
+        .then(response => response.json())
+        .then(data => searchResult(data.meals,searchKey))
+        .catch((error) => {
+            alert('We are unable to load data!! Please Check your Internet Connection! ');
+        });
+    }else{
+        alert("You are trying to search empty Item!!");
+    }    
 }
 
 
